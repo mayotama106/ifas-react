@@ -15,11 +15,6 @@
 }
 
 .card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   width: 80%;
   height: 80%;
   border-radius: 50px;
@@ -27,13 +22,6 @@
           box-shadow: 5px 20px 20px 20px rgba(0, 0, 0, 0.1);
   z-index: 1;
   background-color: #fff;
-}
-
-.card.half {
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  width: 40%;
-  height: 80%;
 }
 
 .colors .item {
@@ -577,10 +565,10 @@ body {
 
 .wrapper.promotion .main .img_container {
   position: absolute;
-  top: 50%;
-  left: 5%;
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 40%;
 }
 
@@ -588,86 +576,110 @@ body {
   width: 100%;
 }
 
+.wrapper.promotion .main .clothes_name {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 3;
+  font-family: Hiragino Maru Gothic Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100px;
+  color: #000000;
+}
+
+.wrapper.promotion .main .colors {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  height: 80%;
+}
+
+.wrapper.promotion .main .colors .item {
+  margin-bottom: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+.wrapper.promotion .main .colors .item.active {
+  -webkit-box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper.promotion .main .colors .item.blue {
+  background-color: #0043ed;
+}
+
+.wrapper.promotion .main .colors .item.yellow {
+  background-color: #fccb90;
+}
+
+.wrapper.promotion .main .colors .item.black {
+  background-color: #040404;
+}
+
+.wrapper.promotion .main .colors .item.white {
+  background-color: #ffffff;
+  border: 2px solid #d0d0d0;
+}
+
 .wrapper.promotion .main .card {
   position: absolute;
-  top: 50%;
+  height: 500px;
+  width: 70%;
+  top: auto;
+  bottom: 200px;
   left: 50%;
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  position: absolute;
 }
 
 .wrapper.promotion .main .card .card-content {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 6rem;
+  padding: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.wrapper.promotion .main .card .card-content .text_container {
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 210px;
-  z-index: 3;
-}
-
-.wrapper.promotion .main .card .card-content .text_container .clothes_name {
-  font-family: Hiragino Maru Gothic Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 8rem;
-  color: #000000;
-}
-
-.wrapper.promotion .main .card .card-content .text_container .explanation {
-  width: 80%;
-  margin-top: 210px;
+.wrapper.promotion .main .card .card-content .explanation {
+  margin: 0 auto;
   font-family: SF Pro Rounded;
   font-style: normal;
   font-weight: 500;
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 36px;
+  line-height: 60px;
 }
 
-.wrapper.promotion .main .card .card-content .colors {
-  height: 80%;
-}
-
-.wrapper.promotion .main .card .card-content .colors .item {
-  margin-bottom: 5rem;
-  width: 6rem;
-  height: 6rem;
-  background-color: #fff;
-  border-radius: 100%;
-}
-
-.wrapper.promotion .main .card .card-content .colors .item.active {
-  -webkit-box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
-}
-
-.wrapper.promotion .main .card .card-content .colors .item.blue {
-  background-color: #0043ED;
-}
-
-.wrapper.promotion .main .card .card-content .colors .item.yellow {
-  background-color: #FCCB90;
-}
-
-.wrapper.promotion .main .card .card-content .colors .item.black {
-  background-color: #040404;
-}
-
-.wrapper.promotion .main .card .card-content .colors .item.white {
-  background-color: #FFFFFF;
-  border: 2px solid #d0d0d0;
+.wrapper.promotion .main .card .card-content .price {
+  position: absolute;
+  left: 75px;
+  bottom: 50px;
+  width: 300px;
+  height: 90px;
+  font-family: Hiragino Maru Gothic Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 96px;
 }
 
 .wrapper.promotion .main .card .card-content .btn {
   position: absolute;
-  bottom: 6rem;
-  right: 6rem;
+  right: 50px;
+  bottom: 50px;
+  width: 300px;
+  height: 90px;
+  font-family: Hiragino Maru Gothic Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
 }

@@ -13,6 +13,7 @@ import hangerIcon from "./assets/img/icons/hanger.svg"
 import cartIcon from "./assets/img/icons/cart.svg"
 
 import bg from "./assets/img/take_dummy.jpg"
+import { promotion } from "./promotion";
 
 
 export const Fitting = (props) => {
@@ -26,7 +27,6 @@ export const Fitting = (props) => {
   ]
 
   return (
-    <div class="bg-image">
       <div class="wrapper fitting">
         <div class="bg">
           <img src={bg} alt="" />
@@ -46,7 +46,9 @@ export const Fitting = (props) => {
               <img src={hangerIcon} alt="" />
             </li>
             <li class="icon cart">
-              <img src={cartIcon} alt="" />
+              <Link to={'/promotion'}>
+                <img src={cartIcon} alt="" />
+              </Link>
             </li>
           </ul>
           <p class="interaction">
@@ -54,23 +56,22 @@ export const Fitting = (props) => {
           </p>
           <ul class="clothes">
             {imageList.map((image, index) => {
-              if (image.isActive === true){
+              if (image.isActive === true) {
                 return (
                   <li className="clothe active">
-                        <img src={image.path} />
+                    <img src={image.path} />
                   </li>
                 )
               }
-              else{
+              else {
                 return (
                   <li className="clothe">
-                        <img src={image.path} />
+                    <img src={image.path} />
                   </li>
-                ) 
+                )
               }
             })}
           </ul>
         </div>
-      </div>
     </div>);
 }

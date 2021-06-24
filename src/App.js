@@ -4,8 +4,9 @@ import { useState } from 'react';
 import {top} from './top';
 import {choose} from './choose';
 import {select} from './select';
-import {Fitting} from './fitting';
 import {takePhoto} from './takePhoto';
+import {Fitting} from './fitting';
+import {promotion} from './promotion';
 
 // base css
 import './assets/css/style.css';
@@ -24,11 +25,12 @@ export const App = () => {
         <BrowserRouter>
         
         <div className="bg-image">
+          <Route exact path='/' component={top} />
           <Route path='/choose' component={choose} /> 
           <Route path='/select' component={select} /> 
-          <Route path='/fitting' component={Fitting} /> 
           <Route path='/takePhoto' component={takePhoto} /> 
-          <Route exact path='/' component={top} />
+          <Route path='/fitting' component={Fitting} /> 
+          <Route exact path='/promotion' component={promotion} />
         </div>
       </BrowserRouter>
     </div>
