@@ -16,7 +16,7 @@
         transform: translateY(-50%);
       }
       .icon {
-        font-size: 200px;
+        font-size: 150px;
         color: rgba(136, 129, 115, .8);
       }
     }
@@ -24,7 +24,7 @@
       position: absolute;
       top: 48%;
       left: 50%;
-      width: 860px;
+      width: 760px;
       height: 1300px;
       transform: translate(-50%, -50%);
       .card-content {
@@ -41,7 +41,7 @@
             font-family: Hiragino Maru Gothic Pro;
             font-style: normal;
             font-weight: normal;
-            font-size: 64px;
+            font-size: 80px;
             line-height: 96px;
           }
           .price {
@@ -56,7 +56,7 @@
         .colors {
           height: 80%;
           .item {
-            $color_btn--size: 75px;
+            $color_btn--size: 60px;
             margin-bottom: 60px;
             width: $color_btn--size;
             height: $color_btn--size;

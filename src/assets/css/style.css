@@ -131,6 +131,7 @@ body {
 
 .home .card-content {
   margin: 0 auto;
+  position: relative;
 }
 
 .home .card-content > .logo {
@@ -200,13 +201,13 @@ body {
   font-family: Hiragino Maru Gothic Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 96px;
+  font-size: 80px;
   line-height: 144px;
   color: #fff;
 }
 
 .wrapper.favorite .main .list {
-  margin: 0 190px;
+  margin: 0 100px;
   margin-top: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,7 +279,7 @@ body {
 }
 
 .wrapper.select .main .scroll_btn .icon {
-  font-size: 200px;
+  font-size: 150px;
   color: rgba(136, 129, 115, 0.8);
 }
 
@@ -286,7 +287,7 @@ body {
   position: absolute;
   top: 48%;
   left: 50%;
-  width: 860px;
+  width: 760px;
   height: 1300px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -311,7 +312,7 @@ body {
   font-family: Hiragino Maru Gothic Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 64px;
+  font-size: 80px;
   line-height: 96px;
 }
 
@@ -330,8 +331,8 @@ body {
 
 .wrapper.select .main .card .card-content .colors .item {
   margin-bottom: 60px;
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   background-color: #fff;
   border-radius: 100%;
 }
@@ -514,9 +515,7 @@ body {
   display: none;
   position: absolute;
   bottom: 500px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: calc(-1080px/2 + 130px*1.5);
   color: #fff;
   font-size: 50px;
   letter-spacing: 5px;
@@ -529,9 +528,7 @@ body {
 .wrapper.fitting .main .clothes {
   position: absolute;
   bottom: 150px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: calc(-1080px/2 + 130px*1.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
