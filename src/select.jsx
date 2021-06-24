@@ -1,37 +1,46 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import image1 from "./image/clothes/1.jpg"
-import image2 from "./image/clothes/2.jpg"
-import image3 from "./image/clothes/3.jpg"
-import image4 from "./image/clothes/4.jpg"
-import image5 from "./image/clothes/5.jpg"
-import image6 from "./image/clothes/6.jpg"
+import image1 from "./assets/img/clothes/019360_1-removebg-preview.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-export const select = (props) =>  {
+export const select = (props) => {
 
     const imageList = [
-        {"nextLink":"/fitting", "path":image1},
-        {"nextLink":"/fitting", "path":image2},
-        {"nextLink":"/fitting", "path":image3},
-        {"nextLink":"/fitting", "path":image4},
-        {"nextLink":"/fitting", "path":image5},
-        {"nextLink":"/fitting", "path":image6}
+        { "nextLink": "/takePhoto", "path": image1 },
     ]
 
     return (
-    <div class="bg-image">
-        <h1> 好きな服を選んでください</h1>
-        <ul>
-            {imageList.map((image, index)=>{
-                return(
-                    <div>
-                        <li>
-                            <Link to={image.nextLink}><img src={image.path} /></Link> 
-                        </li>
-                    </div>
-                )
-            })}
-        </ul>
+        <div class="bg-image">
+            <div class="wrapper select">
+                <div class="main">
+                    <button class="scroll_btn left">
+                        <FontAwesomeIcon icon="caret-left"  className="icon"/>
+                    </button>
+                    {imageList.map((image, index) => {
+                        return(
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="text_container">
+                                        <h2 class="clothes_name">test-T</h2>
+                                        <h3 class="price">￥1,000</h3>
+                                    </div>
+                                    <ul class="colors">
+                                        <li class="item blue active"></li>
+                                        <li class="item black"></li>
+                                        <li class="item white"></li>
+                                        <li class="item yellow"></li>
+                                    </ul>
+                                    <img src={image.path} alt="" />
+                                    <button class="btn"><Link to={image.nextLink}>着てみる</Link></button>
+                                </div>
+                            </div>
+                        )
+                    })}
+                    <button class="scroll_btn right">
+                        <FontAwesomeIcon icon="caret-right" className="icon"/>
+                    </button>
+                </div>
+            </div>
         </div>);
 }

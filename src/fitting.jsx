@@ -1,70 +1,76 @@
 import React, { useEffect } from "react";
 import { Link } from 'react-router-dom'
-import socketIOClient from "socket.io-client"
-import { useState } from 'react';
-import './App.css';
-import Countdown from "react-countdown";
+// image
+import image1 from "./assets/img/clothes/019360_1-removebg-preview.png"
+import image2 from "./assets/img/clothes/019368_1-removebg-preview.png"
+import image3 from "./assets/img/clothes/019384_1-removebg-preview.png"
+import image4 from "./assets/img/clothes/019393_1-removebg-preview.png"
+import image5 from "./assets/img/clothes/019402_1-removebg-preview.png"
+
+// icon
+import homeIcon from "./assets/img/icons/home.svg"
+import hangerIcon from "./assets/img/icons/hanger.svg"
+import cartIcon from "./assets/img/icons/cart.svg"
+
+import bg from "./assets/img/take_dummy.jpg"
 
 
-const ENDPOINT = "http://localhost:5000/web"
+export const Fitting = (props) => {
 
-// Flaskサーバへの接続
+  const imageList = [
+    { "nextLink": "/select", "path": image1, "isActive": false },
+    { "nextLink": "/select", "path": image2, "isActive": false },
+    { "nextLink": "/select", "path": image3, "isActive": true },
+    { "nextLink": "/select", "path": image4, "isActive": false },
+    { "nextLink": "/select", "path": image5, "isActive": false }
+  ]
 
-
-
-
-let socket = socketIOClient(ENDPOINT)
-
-export const Fitting = () =>  {
-  if(socket.connected != true){
-    socket.connect()
-  }
-    const [image, setImage] = useState("")
-
-
-    const [counter, setCounter] = React.useState(3);
-
-    // Third Attempts
-    React.useEffect(() => {
-      const timer =
-        counter > 0 && setInterval(() => setCounter(counter - 1), 3000);
-
-        
-      if (counter ==0) {
-        socket.emit("message", "shutter")
-      }
-
-      
-      return () => clearInterval(timer);
-      
-
-    }, [counter]);
-  
-
-    useEffect(()=>{
-
-      
-        socket.on("connect", () => {
-            
-        });
-
-        socket.on("image", (image) => {
-            setImage(image)
-        });
-
-        return () => {
-        socket.emit("message", "videoOn")
-        socket.disconnect()
-      }
-    }, [])
-
-    
-
-
-    return (
+  return (
     <div class="bg-image">
-        <h1> ３，２，１のカウントダウンで撮影します</h1>
-        <div>{counter}</div>
-        <img src={image} className="image-fitting"/>
-        </div>);
+      <div class="wrapper fitting">
+        <div class="bg">
+          <img src={bg} alt="" />
+        </div>
+        <div class="main">
+          <ul class="colors">
+            <li class="item blue active"></li>
+            <li class="item black"></li>
+            <li class="item white"></li>
+            <li class="item yellow"></li>
+          </ul>
+          <ul class="icons">
+            <li class="icon home">
+              <img src={homeIcon} alt="" />
+            </li>
+            <li class="icon hanger">
+              <img src={hangerIcon} alt="" />
+            </li>
+            <li class="icon cart">
+              <img src={cartIcon} alt="" />
+            </li>
+          </ul>
+          <p class="interaction">
+            タップすると試着できます
+          </p>
+          <ul class="clothes">
+            {imageList.map((image, index) => {
+              if (image.isActive === true){
+                return (
+                  <li className="clothe active">
+                        <img src={image.path} />
+                  </li>
+                )
+              }
+              else{
+                return (
+                  <li className="clothe">
+                        <img src={image.path} />
+                  </li>
+                ) 
+              }
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>);
 }
